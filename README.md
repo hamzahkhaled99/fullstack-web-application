@@ -10,7 +10,7 @@ This project demonstrates hands-on, project-based full-stack web development ski
 - Dashboard Interface
 - Modular JavaScript Application Logic
 - Multiple Functional Pages (Blog, Pricing, API, Policies)
-- Environment Configuration using `.env`
+Client-side configuration handled directly in JavaScript (no backend).
 
 ## 🔹 Technologies Used
 - HTML5

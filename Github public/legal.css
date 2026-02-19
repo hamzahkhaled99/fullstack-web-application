@@ -1,0 +1,72 @@
+﻿* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Outfit", "Plus Jakarta Sans", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(900px 450px at -8% 0%, color-mix(in srgb, var(--brand) 24%, transparent), transparent 68%),
+    radial-gradient(900px 450px at 108% -4%, color-mix(in srgb, var(--brand-2) 18%, transparent), transparent 70%),
+    linear-gradient(180deg, var(--bg), var(--bg-soft) 45%, var(--bg));
+  line-height: 1.6;
+}
+
+.legal-wrap {
+  width: calc(100% - 20px);
+  margin: 24px auto 42px;
+}
+
+.back-link {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--heading);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 8px 14px;
+  background: var(--surface-strong);
+}
+
+.legal-card {
+  margin-top: 14px;
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 20px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.kicker {
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(30px, 5vw, 52px);
+  line-height: 1.08;
+  color: var(--heading);
+}
+
+.updated {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+section { margin-top: 18px; }
+
+h2 {
+  margin: 0 0 8px;
+  font-size: 20px;
+  color: var(--heading);
+}
+
+p, li { color: var(--text); }
+
+ul {
+  margin: 8px 0 0;
+  padding-left: 20px;
+}

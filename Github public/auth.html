@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Best student humanizer | Access</title>
+  <link rel="icon" type="image/svg+xml" href="assets/site-logo.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="auth.css?v=20260218ux14" />
+  <link rel="stylesheet" href="theme.css?v=20260218ux13" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("bsh_theme");
+        document.documentElement.setAttribute("data-theme", t === "light" ? "light" : "dark");
+      } catch (_) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    })();
+  </script>
+</head>
+<body>
+  <main class="auth-page">
+    <a class="back-link" href="index.html">&larr; Back to Website</a>
+
+    <section class="auth-card">
+      <div class="auth-orb" aria-hidden="true"></div>
+      <h1>Create your AI writing workspace</h1>
+
+      <div class="auth-tabs" role="tablist" aria-label="Auth Tabs">
+        <button type="button" data-tab="signin" role="tab" aria-selected="false">Log In</button>
+        <button class="active" type="button" data-tab="signup" role="tab" aria-selected="true">Create Account</button>
+      </div>
+
+      <p class="auth-message" id="authMessage" aria-live="polite"></p>
+
+      <form class="auth-form" id="signinForm" novalidate>
+        <label>Email
+          <input id="signinEmail" type="email" placeholder="you@example.com" required />
+        </label>
+        <label>Password
+          <input id="signinPassword" type="password" placeholder="Your password" required />
+        </label>
+        <p class="switch-copy">Forgot password? <button type="button" class="text-btn" data-go="forgot">Reset it</button></p>
+        <button type="submit" class="primary-btn">Continue</button>
+      </form>
+
+      <form class="auth-form" id="forgotForm" novalidate>
+        <label>Email
+          <input id="forgotEmail" type="email" placeholder="you@example.com" required />
+        </label>
+        <label>Verification Code
+          <input id="forgotCode" type="text" placeholder="Enter 6-digit code" inputmode="numeric" required />
+        </label>
+        <label>New Password
+          <input id="forgotPassword" type="password" placeholder="At least 8 characters" required />
+        </label>
+        <label>Confirm New Password
+          <input id="forgotConfirmPassword" type="password" placeholder="Repeat new password" required />
+        </label>
+        <button type="button" class="secondary-btn" id="sendResetCodeBtn">Send Code to Email</button>
+        <button type="submit" class="primary-btn">Reset Password</button>
+        <p class="switch-copy">Remembered it? <button type="button" class="text-btn" data-go="signin">Log in</button></p>
+      </form>
+
+      <form class="auth-form active" id="signupForm" novalidate>
+        <label>Full name
+          <input id="signupName" type="text" placeholder="e.g., Mark Rossi" required />
+        </label>
+        <label>Email
+          <input id="signupEmail" type="email" placeholder="name@email.com" required />
+        </label>
+        <label>Password
+          <input id="signupPassword" type="password" placeholder="At least 8 characters" required />
+        </label>
+        <label>Confirm Password
+          <input id="signupConfirmPassword" type="password" placeholder="Repeat password" required />
+        </label>
+        <label>How did you find us?
+          <select id="signupSource" required>
+            <option value="" selected>Select channel</option>
+            <option value="google_search">Google Search</option>
+            <option value="youtube">YouTube</option>
+            <option value="instagram">Instagram</option>
+            <option value="tiktok">TikTok</option>
+            <option value="linkedin">LinkedIn</option>
+            <option value="x_twitter">X (Twitter)</option>
+            <option value="facebook">Facebook</option>
+            <option value="reddit">Reddit</option>
+            <option value="friend_family">Friend or family</option>
+            <option value="blog_article">Blog / Article</option>
+            <option value="community_group">Community Group</option>
+            <option value="other">Other</option>
+          </select>
+        </label>
+
+        <label class="check-row">
+          <input id="signupTerms" type="checkbox" required />
+          <span>I agree to the <a href="terms.html">User Terms</a></span>
+        </label>
+
+        <label class="check-row">
+          <input type="checkbox" checked />
+          <span>Send me product updates, learning tips, and special offers.</span>
+        </label>
+
+        <button type="submit" class="primary-btn">Create Account -&gt;</button>
+
+        <p class="switch-copy">Already with us? <button type="button" class="text-btn" data-go="signin">Log in</button></p>
+
+        <div class="divider"><span>or continue with</span></div>
+
+        <button type="button" class="google-btn">Continue with Google</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="core.js?v=20260218ux13"></script>
+  <script src="theme.js?v=20260218ux35"></script>
+  <script src="i18n.js?v=20260219src1"></script>
+  <script src="manychat.js?v=20260216mc7"></script>
+  <script src="auth.js?v=20260218ux15"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

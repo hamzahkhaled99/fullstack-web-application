@@ -1,0 +1,725 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Best student humanizer | Workspace</title>
+  <link rel="icon" type="image/svg+xml" href="assets/site-logo.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="tools.css?v=20260219prod1" />
+  <link rel="stylesheet" href="theme.css?v=20260218ux13" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("bsh_theme");
+        document.documentElement.setAttribute("data-theme", t === "light" ? "light" : "dark");
+      } catch (_) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    })();
+  </script>
+</head>
+<body>
+  <main class="tools-page">
+    <header class="tools-header">
+      <div class="tools-header-top">
+        <a href="index.html" class="back-link">&larr; Back</a>
+        <div class="tools-header-actions">
+          <div class="session-bar">
+            <p id="sessionInfo">Signed in: Guest Member</p>
+          </div>
+          <button id="themeToggle" class="theme-toggle-inline" type="button" aria-label="Switch theme">Light</button>
+          <button id="logoutBtn" type="button">Log out</button>
+        </div>
+      </div>
+      <h1>Student humanizer</h1>
+    </header>
+
+    <section class="tool-tabs" id="toolTabs">
+      <div class="tool-tab-group">
+        <p>Core Tools</p>
+        <div class="tool-tab-grid">
+          <button data-tool="fusion">Research Fusion</button>
+          <button class="active" data-tool="humanizer">Humanizer Pro</button>
+          <button data-tool="chat">Research Copilot</button>
+          <button data-tool="essay">Essay Architect</button>
+          <button data-tool="note">Lecture Notes AI</button>
+          <button data-tool="report">Authenticity Report</button>
+          <button data-tool="editor">Smart Editor</button>
+        </div>
+      </div>
+
+      <div class="tool-tab-group">
+        <p>Advanced Writing</p>
+        <div class="tool-tab-grid">
+          <button data-tool="citation">Citation Agent</button>
+          <button data-tool="plagiarism">Plagiarism Checker</button>
+          <button data-tool="methodology">Methodology Builder</button>
+          <button data-tool="paraphrase">Paraphrase by Level</button>
+          <button data-tool="thesis">Thesis Generator</button>
+          <button data-tool="outline">Outline to Draft</button>
+        </div>
+      </div>
+
+      <div class="tool-tab-group">
+        <p>Quality &amp; Review</p>
+        <div class="tool-tab-grid">
+          <button data-tool="file">PDF/Doc Analyzer</button>
+          <button data-tool="heatmap">Style Heatmap</button>
+          <button data-tool="readiness">Submission Readiness</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="tool-panel" id="tool-fusion">
+      <h2>Research Fusion</h2>
+      <div id="fusionEntryPaths" class="entry-path-switch">
+        <button type="button" class="active" data-path="idea">Start from idea</button>
+        <button type="button" data-path="file">Start from file</button>
+        <button type="button" data-path="text">Start from text</button>
+      </div>
+      <div class="fusion-compact-hint">
+        <span class="fusion-compact-badge">Premium AI Stack</span>
+        <strong class="fusion-compact-title">Deep Reasoning + QA Ensemble</strong>
+        <span class="fusion-compact-proof">Auto weak-section recovery + final gatekeeper review</span>
+      </div>
+      <div class="fusion-intake">
+        <p class="fusion-intake-title">Smart Research Intake (Required for best one-pass quality)</p>
+        <div class="fusion-question-grid">
+          <label class="fusion-q fusion-q-full">Research problem or gap *
+            <input id="fusionProblem" type="text" placeholder="What exact problem should this study solve?" />
+          </label>
+          <label class="fusion-q">Main objective *
+            <input id="fusionObjective" type="text" placeholder="What is the core contribution?" />
+          </label>
+          <label class="fusion-q">Primary RQ or hypothesis *
+            <input id="fusionRQ" type="text" placeholder="State one clear research question/hypothesis." />
+          </label>
+          <label class="fusion-q">Population / context
+            <input id="fusionContext" type="text" placeholder="Who/where is being studied? (sector, country, group)" />
+          </label>
+          <label class="fusion-q">Preferred methodology *
+            <select id="fusionMethodPreference">
+              <option value="auto" selected>Auto by AI (based on title + RQ)</option>
+              <option value="quantitative">Quantitative</option>
+              <option value="qualitative">Qualitative</option>
+              <option value="mixed">Mixed methods</option>
+              <option value="experimental">Experimental</option>
+              <option value="case-study">Case study</option>
+              <option value="systematic-review">Systematic review</option>
+            </select>
+          </label>
+          <label class="fusion-q fusion-q-full">Constraints, scope limits, or professor notes
+            <textarea id="fusionConstraints" placeholder="Example: 2500 words, undergraduate level, no primary data collection."></textarea>
+          </label>
+        </div>
+      </div>
+      <div class="grid-two">
+        <input id="fusionTitle" type="text" placeholder="Research title" />
+        <select id="fusionDomain">
+          <option value="general">General</option>
+          <option value="business">Business</option>
+          <option value="education">Education</option>
+          <option value="healthcare">Healthcare</option>
+          <option value="technology">Technology</option>
+        </select>
+      </div>
+      <div class="grid-two">
+        <select id="fusionTone">
+          <option value="academic">Academic tone</option>
+          <option value="persuasive">Persuasive tone</option>
+          <option value="simple">Simple tone</option>
+        </select>
+        <select id="fusionCitationStyle">
+          <option value="APA">APA citations</option>
+          <option value="MLA">MLA citations</option>
+          <option value="Harvard">Harvard citations</option>
+        </select>
+      </div>
+      <div>
+        <select id="fusionAccuracy">
+          <option value="high" selected>High accuracy</option>
+          <option value="balanced">Balanced</option>
+        </select>
+      </div>
+      <div class="actions inline-actions">
+        <button id="fusionGenerateBtn">Generate Full Research</button>
+        <button id="fusionClearBtn" type="button">Clear</button>
+        <button id="fusionCopyBtn" type="button">Copy Final</button>
+        <button id="fusionDownloadWordBtn" type="button">Download Word</button>
+        <button id="fusionDownloadPdfBtn" type="button">Download PDF</button>
+      </div>
+      <p class="block-label">AI Orchestration Console</p>
+      <div class="fusion-console">
+        <div class="fusion-console-top">
+          <div class="fusion-console-kpi">
+            <p>Pipeline Health</p>
+            <strong id="fusionPipelineHealth" class="fusion-health fusion-health-idle">Ready</strong>
+          </div>
+          <div class="fusion-console-kpi">
+            <p>Execution Phase</p>
+            <strong id="fusionPipelinePhase">Idle</strong>
+          </div>
+          <div class="fusion-console-kpi">
+            <p>AI Vision</p>
+            <strong id="fusionVisionMode">Multi-Agent Precision</strong>
+          </div>
+        </div>
+        <div class="fusion-progress">
+          <div id="fusionProgressBar" class="fusion-progress-bar"></div>
+        </div>
+        <p id="fusionProgressText" class="fusion-progress-text">0% complete - 0/0 steps</p>
+        <div id="fusionStageGrid" class="fusion-stage-grid"></div>
+        <div id="fusionStatus" class="fusion-status-hidden" aria-hidden="true">No pipeline run yet.</div>
+      </div>
+      <p class="block-label">Final Human-Like Research</p>
+      <textarea id="fusionOutput" placeholder="Your final research will appear here..." readonly></textarea>
+      <div class="tool-stats"><p>Output words: <strong id="fusionWordCount">0</strong></p></div>
+      <p class="block-label">Quality & Review Bundle</p>
+      <textarea id="fusionReviewOutput" placeholder="Readiness, authenticity, plagiarism, and style diagnostics..." readonly></textarea>
+    </section>
+
+    <section class="tool-panel active" id="tool-humanizer">
+      <h2>Humanizer Pro</h2>
+      <div class="tool-intro">
+        <p>Turn AI-like writing into natural academic text while preserving your meaning.</p>
+        <div class="tool-steps"><span>1. Paste text</span><span>2. Choose style</span><span>3. Humanize & review</span></div>
+      </div>
+      <div class="mini-grid">
+        <label>Quick preset
+          <select id="humanizerTemplate">
+            <option value="">Select preset</option>
+            <option value="academic">Academic Paragraph</option>
+            <option value="business">Business Email</option>
+            <option value="report">Executive Summary</option>
+          </select>
+        </label>
+        <div class="actions inline-actions">
+          <button id="humanizerTemplateBtn" type="button">Apply Preset</button>
+          <button id="humanizerClearBtn" type="button">Clear</button>
+        </div>
+      </div>
+      <p class="block-label">Input</p>
+      <textarea id="humanizerInput" placeholder="Paste text to transform..."></textarea>
+      <div class="tool-stats">
+        <p>Input words: <strong id="humanizerInputWords">0</strong></p>
+        <p>Input chars: <strong id="humanizerInputChars">0</strong></p>
+      </div>
+      <p class="block-label">Settings</p>
+      <div class="humanizer-controls">
+        <label>Output style
+          <select id="humanizerMode">
+            <option value="academic">Academic</option>
+            <option value="natural">Natural</option>
+            <option value="simple">Simple</option>
+            <option value="formal">Formal</option>
+          </select>
+        </label>
+        <label>Rewrite depth
+          <select id="humanizerStrength">
+            <option value="light">Light</option>
+            <option value="medium" selected>Medium</option>
+            <option value="strong">Strong</option>
+          </select>
+        </label>
+        <label class="check-inline">
+          <input id="preserveTerms" type="checkbox" checked />
+          Keep technical terms
+        </label>
+        <label class="full">Locked keywords (comma separated)
+          <input id="protectedTerms" type="text" placeholder="e.g. GPTZero, Turnitin, TOE, 2026" />
+        </label>
+      </div>
+      <div class="actions inline-actions">
+        <button id="humanizeBtn">Humanize Now</button>
+        <button id="humanizerCopyBtn" type="button">Copy</button>
+        <button id="humanizerDownloadWordBtn" type="button">Download Word</button>
+        <button id="humanizerDownloadPdfBtn" type="button">Download PDF</button>
+      </div>
+      <p class="block-label">Output</p>
+      <textarea id="humanizerOutput" placeholder="Your refined text appears here..." readonly></textarea>
+      <div class="tool-stats">
+        <p>Output words: <strong id="humanizerOutputWords">0</strong></p>
+        <p>Readability: <strong id="humanizerReadability">-</strong></p>
+      </div>
+      <div class="diff-wrap">
+        <h3>Smart Compare</h3>
+        <div id="humanizerDiff" class="diff-box">No comparison yet.</div>
+      </div>
+      <div class="history-wrap">
+        <h3>History</h3>
+        <div id="humanizerHistory" class="history-list">No saved versions yet.</div>
+      </div>
+    </section>
+
+    <section class="tool-panel" id="tool-chat">
+      <h2>Research Copilot</h2>
+      <div class="tool-intro">
+        <p>Ask research and assignment questions and get structured, practical guidance.</p>
+        <div class="tool-steps"><span>1. Pick starter</span><span>2. Ask question</span><span>3. Follow next actions</span></div>
+      </div>
+      <div class="mini-grid">
+        <label>Starter scenario
+          <select id="chatTemplate">
+            <option value="">Select scenario</option>
+            <option value="method">Build my research methodology</option>
+            <option value="literature">Help me with literature review</option>
+            <option value="plan">Create a 7-day study plan</option>
+          </select>
+        </label>
+        <div class="actions inline-actions">
+          <button id="chatTemplateBtn" type="button">Use Starter</button>
+          <button id="chatClearBtn" type="button">Reset Chat</button>
+        </div>
+      </div>
+      <p class="block-label">Conversation</p>
+      <div id="chatBox" class="chat-box"></div>
+      <div class="tool-stats">
+        <p>Messages: <strong id="chatMsgCount">0</strong></p>
+        <p>Total words: <strong id="chatWordCount">0</strong></p>
+      </div>
+      <p class="block-label">Your Message</p>
+      <div class="chat-input-wrap">
+        <input id="chatInput" type="text" placeholder="Ask your research question..." />
+        <button id="chatSendBtn">Send</button>
+      </div>
+      <div class="actions inline-actions">
+        <button id="chatCopyBtn" type="button">Copy Conversation</button>
+        <button id="chatDownloadWordBtn" type="button">Download Word</button>
+        <button id="chatDownloadPdfBtn" type="button">Download PDF</button>
+      </div>
+      <div class="history-wrap">
+        <h3>History</h3>
+        <div id="chatHistory" class="history-list">No chat history yet.</div>
+      </div>
+    </section>
+
+    <section class="tool-panel" id="tool-essay">
+      <h2>Essay Architect</h2>
+      <div class="tool-intro">
+        <p>Generate a clean, well-structured draft with academic flow in seconds.</p>
+        <div class="tool-steps"><span>1. Set topic</span><span>2. Select tone</span><span>3. Build draft</span></div>
+      </div>
+      <p class="block-label">Input</p>
+      <div class="grid-two">
+        <input id="essayTopic" type="text" placeholder="Enter essay topic" />
+        <select id="essayTone">
+          <option value="academic">Academic</option>
+          <option value="simple">Simple</option>
+          <option value="persuasive">Persuasive</option>
+        </select>
+      </div>
+      <div class="mini-grid">
+        <label>Outline preset
+          <select id="essayTemplate">
+            <option value="">Select preset</option>
+            <option value="argumentative">Argumentative</option>
+            <option value="compare">Compare & Contrast</option>
+            <option value="case">Case Analysis</option>
+          </select>
+        </label>
+      </div>
+      <div class="actions inline-actions">
+        <button id="essayGenerateBtn">Build Essay</button>
+        <button id="essayClearBtn" type="button">Clear</button>
+        <button id="essayCopyBtn" type="button">Copy</button>
+        <button id="essayDownloadWordBtn" type="button">Download Word</button>
+        <button id="essayDownloadPdfBtn" type="button">Download PDF</button>
+      </div>
+      <p class="block-label">Output</p>
+      <textarea id="essayOutput" placeholder="Your essay draft appears here..." readonly></textarea>
+      <div class="tool-stats">
+        <p>Output words: <strong id="essayWordCount">0</strong></p>
+        <p>Readability: <strong id="essayReadability">-</strong></p>
+      </div>
+      <div class="history-wrap">
+        <h3>History</h3>
+        <div id="essayHistory" class="history-list">No saved versions yet.</div>
+      </div>
+    </section>
+
+    <section class="tool-panel" id="tool-note">
+      <h2>Lecture Notes AI</h2>
+      <div class="tool-intro">
+        <p>Convert long lectures or transcripts into concise notes for faster revision.</p>
+        <div class="tool-steps"><span>1. Paste content</span><span>2. Generate notes</span><span>3. Copy or download</span></div>
+      </div>
+      <div class="mini-grid">
+        <label>Notes preset
+          <select id="noteTemplate">
+            <option value="">Select preset</option>
+            <option value="lecture">Lecture Notes</option>
+            <option value="chapter">Chapter Summary</option>
+            <option value="meeting">Meeting Minutes</option>
+          </select>
+        </label>
+        <div class="actions inline-actions">
+          <button id="noteTemplateBtn" type="button">Apply Preset</button>
+          <button id="noteClearBtn" type="button">Clear</button>
+        </div>
+      </div>
+      <p class="block-label">Input</p>
+      <textarea id="noteInput" placeholder="Paste lecture content, transcript, or rough notes..."></textarea>
+      <div class="actions inline-actions">
+        <button id="noteProcessBtn">Generate Notes</button>
+        <button id="noteCopyBtn" type="button">Copy</button>
+        <button id="noteDownloadWordBtn" type="button">Download Word</button>
+        <button id="noteDownloadPdfBtn" type="button">Download PDF</button>
+      </div>
+      <p class="block-label">Output</p>
+      <textarea id="noteOutput" placeholder="Structured revision notes appear here..." readonly></textarea>
+      <div class="tool-stats">
+        <p>Output words: <strong id="noteWordCount">0</strong></p>
+      </div>
+      <div class="history-wrap">
+        <h3>History</h3>
+        <div id="noteHistory" class="history-list">No saved versions yet.</div>
+      </div>
+    </section>
+
+    <section class="tool-panel" id="tool-report">
+      <h2>Authenticity Report</h2>
+      <div class="tool-intro">
+        <p>Screen writing patterns and get a quick authenticity estimate with guidance.</p>
+        <div class="tool-steps"><span>1. Paste text</span><span>2. Run analysis</span><span>3. Review risk note</span></div>
+      </div>
+      <div class="mini-grid">
+        <label>Report preset
+          <select id="reportTemplate">
+            <option value="">Select preset</option>
+            <option value="executive">Executive Brief</option>
+            <option value="ops">Operations Risk</option>
+            <option value="education">Academic Committee</option>
+          </select>
+        </label>
+        <div class="actions inline-actions">
+          <button id="reportTemplateBtn" type="button">Apply Preset</button>
+          <button id="reportClearBtn" type="button">Clear</button>
+        </div>
+      </div>
+      <p class="block-label">Input</p>
+      <textarea id="reportInput" placeholder="Paste text for authenticity screening..."></textarea>
+      <div class="actions"><button id="reportAnalyzeBtn">Run Analysis</button></div>
+      <p class="block-label">Analysis</p>
+      <div class="report-card" id="reportOutput">
+        <p>AI probability: <strong id="aiScore">-</strong></p>
+        <p>Human probability: <strong id="humanScore">-</strong></p>
+        <p id="reportHint">No analysis yet.</p>
+      </div>
+      <div class="tool-stats">
+        <p>Input words: <strong id="reportWordCount">0</strong></p>
+      </div>
+      <div class="actions inline-actions">
+        <button id="reportCopyBtn" type="button">Copy Summary</button>
+        <button id="reportDownloadWordBtn" type="button">Download Word</button>
+        <button id="reportDownloadPdfBtn" type="button">Download PDF</button>
+      </div>
+      <div class="history-wrap">
+        <h3>History</h3>
+        <div id="reportHistory" class="history-list">No reports yet.</div>
+      </div>
+    </section>
+
+    <section class="tool-panel" id="tool-editor">
+      <h2>Smart Editor</h2>
+      <div class="tool-intro">
+        <p>Improve grammar, clarity, and flow while preserving your original intent.</p>
+        <div class="tool-steps"><span>1. Paste draft</span><span>2. Choose edit mode</span><span>3. Refine & compare</span></div>
+      </div>
+      <p class="block-label">Settings</p>
+      <div class="humanizer-controls">
+        <label>Edit style
+          <select id="editorMode">
+            <option value="academic">Academic</option>
+            <option value="professional">Professional</option>
+            <option value="simple">Simple</option>
+          </select>
+        </label>
+        <label>Edit depth
+          <select id="editorStrength">
+            <option value="light">Light</option>
+            <option value="medium" selected>Medium</option>
+            <option value="strong">Strong</option>
+          </select>
+        </label>
+      </div>
+      <p class="block-label">Input</p>
+      <textarea id="editorInput" placeholder="Paste text to refine grammar and flow..."></textarea>
+      <div class="actions inline-actions">
+        <button id="editorFixBtn">Refine Text</button>
+        <button id="editorClearBtn" type="button">Clear</button>
+        <button id="editorCopyBtn" type="button">Copy</button>
+        <button id="editorDownloadWordBtn" type="button">Download Word</button>
+        <button id="editorDownloadPdfBtn" type="button">Download PDF</button>
+      </div>
+      <p class="block-label">Output</p>
+      <textarea id="editorOutput" placeholder="Your improved version appears here..." readonly></textarea>
+      <div class="tool-stats">
+        <p>Output words: <strong id="editorWordCount">0</strong></p>
+        <p>Readability: <strong id="editorReadability">-</strong></p>
+      </div>
+      <div class="diff-wrap">
+        <h3>Smart Compare</h3>
+        <div id="editorDiff" class="diff-box">No comparison yet.</div>
+      </div>
+      <div class="history-wrap">
+        <h3>History</h3>
+        <div id="editorHistory" class="history-list">No saved versions yet.</div>
+      </div>
+    </section>
+
+    <section class="tool-panel" id="tool-citation">
+      <h2>Citation Agent</h2>
+      <div class="tool-intro">
+        <p>Generate references and in-text citation structure in one click.</p>
+        <div class="tool-steps"><span>1. Paste source details</span><span>2. Select style</span><span>3. Generate citations</span></div>
+      </div>
+      <div class="grid-two">
+        <input id="citationTopic" type="text" placeholder="Optional topic or source context" />
+        <select id="citationStyle">
+          <option value="APA">APA</option>
+          <option value="MLA">MLA</option>
+          <option value="Harvard">Harvard</option>
+        </select>
+      </div>
+      <p class="block-label">Input</p>
+      <textarea id="citationInput" placeholder="Paste source info: author, title, year, journal, URL..."></textarea>
+      <div class="actions inline-actions">
+        <button id="citationGenerateBtn">Generate Citations</button>
+        <button id="citationClearBtn" type="button">Clear</button>
+        <button id="citationCopyBtn" type="button">Copy</button>
+        <button id="citationDownloadWordBtn" type="button">Download Word</button>
+        <button id="citationDownloadPdfBtn" type="button">Download PDF</button>
+      </div>
+      <p class="block-label">Output</p>
+      <textarea id="citationOutput" placeholder="Formatted citations appear here..." readonly></textarea>
+      <div class="tool-stats"><p>Output words: <strong id="citationWordCount">0</strong></p></div>
+      <div class="history-wrap"><h3>History</h3><div id="citationHistory" class="history-list">No saved versions yet.</div></div>
+    </section>
+
+    <section class="tool-panel" id="tool-plagiarism">
+      <h2>Plagiarism Risk Checker</h2>
+      <div class="tool-intro">
+        <p>Get a practical overlap-risk estimate and rewrite guidance.</p>
+        <div class="tool-steps"><span>1. Paste draft</span><span>2. Run check</span><span>3. Fix high-risk lines</span></div>
+      </div>
+      <p class="block-label">Input</p>
+      <textarea id="plagiarismInput" placeholder="Paste text for overlap-risk screening..."></textarea>
+      <div class="actions inline-actions">
+        <button id="plagiarismGenerateBtn">Check Risk</button>
+        <button id="plagiarismClearBtn" type="button">Clear</button>
+        <button id="plagiarismCopyBtn" type="button">Copy</button>
+        <button id="plagiarismDownloadWordBtn" type="button">Download Word</button>
+        <button id="plagiarismDownloadPdfBtn" type="button">Download PDF</button>
+      </div>
+      <p class="block-label">Output</p>
+      <textarea id="plagiarismOutput" placeholder="Risk analysis appears here..." readonly></textarea>
+      <div class="tool-stats"><p>Output words: <strong id="plagiarismWordCount">0</strong></p></div>
+      <div class="history-wrap"><h3>History</h3><div id="plagiarismHistory" class="history-list">No saved versions yet.</div></div>
+    </section>
+
+    <section class="tool-panel" id="tool-methodology">
+      <h2>Research Methodology Builder</h2>
+      <div class="tool-intro">
+        <p>Build methodology foundations: constructs, method, sample, and analysis plan.</p>
+        <div class="tool-steps"><span>1. Add topic</span><span>2. Pick domain</span><span>3. Build methodology</span></div>
+      </div>
+      <div class="grid-two">
+        <input id="methodologyTopic" type="text" placeholder="Research topic" />
+        <select id="methodologyDomain">
+          <option value="general">General</option>
+          <option value="business">Business</option>
+          <option value="education">Education</option>
+          <option value="healthcare">Healthcare</option>
+          <option value="technology">Technology</option>
+        </select>
+      </div>
+      <p class="block-label">Input</p>
+      <textarea id="methodologyInput" placeholder="Add your question, context, and available data..."></textarea>
+      <div class="actions inline-actions">
+        <button id="methodologyGenerateBtn">Build Methodology</button>
+        <button id="methodologyClearBtn" type="button">Clear</button>
+        <button id="methodologyCopyBtn" type="button">Copy</button>
+        <button id="methodologyDownloadWordBtn" type="button">Download Word</button>
+        <button id="methodologyDownloadPdfBtn" type="button">Download PDF</button>
+      </div>
+      <p class="block-label">Output</p>
+      <textarea id="methodologyOutput" placeholder="Methodology draft appears here..." readonly></textarea>
+      <div class="tool-stats"><p>Output words: <strong id="methodologyWordCount">0</strong></p></div>
+      <div class="history-wrap"><h3>History</h3><div id="methodologyHistory" class="history-list">No saved versions yet.</div></div>
+    </section>
+
+    <section class="tool-panel" id="tool-paraphrase">
+      <h2>Paraphrase by Level</h2>
+      <div class="tool-intro">
+        <p>Rewrite text according to academic level while preserving core meaning.</p>
+        <div class="tool-steps"><span>1. Paste text</span><span>2. Select level</span><span>3. Paraphrase</span></div>
+      </div>
+      <div class="grid-two">
+        <input id="paraphraseTopic" type="text" placeholder="Optional context" />
+        <select id="paraphraseLevel">
+          <option value="simple">Simple</option>
+          <option value="undergraduate" selected>Undergraduate</option>
+          <option value="postgraduate">Postgraduate</option>
+          <option value="research">Research</option>
+        </select>
+      </div>
+      <p class="block-label">Input</p>
+      <textarea id="paraphraseInput" placeholder="Paste text to paraphrase..."></textarea>
+      <div class="actions inline-actions">
+        <button id="paraphraseGenerateBtn">Paraphrase</button>
+        <button id="paraphraseClearBtn" type="button">Clear</button>
+        <button id="paraphraseCopyBtn" type="button">Copy</button>
+        <button id="paraphraseDownloadWordBtn" type="button">Download Word</button>
+        <button id="paraphraseDownloadPdfBtn" type="button">Download PDF</button>
+      </div>
+      <p class="block-label">Output</p>
+      <textarea id="paraphraseOutput" placeholder="Paraphrased text appears here..." readonly></textarea>
+      <div class="tool-stats"><p>Output words: <strong id="paraphraseWordCount">0</strong></p></div>
+      <div class="history-wrap"><h3>History</h3><div id="paraphraseHistory" class="history-list">No saved versions yet.</div></div>
+    </section>
+
+    <section class="tool-panel" id="tool-thesis">
+      <h2>Thesis Statement Generator</h2>
+      <div class="tool-intro">
+        <p>Create strong thesis options and select a final recommended thesis.</p>
+        <div class="tool-steps"><span>1. Enter topic</span><span>2. Generate options</span><span>3. Pick final thesis</span></div>
+      </div>
+      <p class="block-label">Input</p>
+      <textarea id="thesisInput" placeholder="Enter your topic, stance, and key argument..."></textarea>
+      <div class="actions inline-actions">
+        <button id="thesisGenerateBtn">Generate Thesis</button>
+        <button id="thesisClearBtn" type="button">Clear</button>
+        <button id="thesisCopyBtn" type="button">Copy</button>
+        <button id="thesisDownloadWordBtn" type="button">Download Word</button>
+        <button id="thesisDownloadPdfBtn" type="button">Download PDF</button>
+      </div>
+      <p class="block-label">Output</p>
+      <textarea id="thesisOutput" placeholder="Thesis options appear here..." readonly></textarea>
+      <div class="tool-stats"><p>Output words: <strong id="thesisWordCount">0</strong></p></div>
+      <div class="history-wrap"><h3>History</h3><div id="thesisHistory" class="history-list">No saved versions yet.</div></div>
+    </section>
+
+    <section class="tool-panel" id="tool-outline">
+      <h2>Outline to Draft</h2>
+      <div class="tool-intro">
+        <p>Turn bullet outlines into coherent draft sections with clean transitions.</p>
+        <div class="tool-steps"><span>1. Paste outline</span><span>2. Generate draft</span><span>3. Refine output</span></div>
+      </div>
+      <p class="block-label">Input</p>
+      <textarea id="outlineInput" placeholder="Paste your outline points here..."></textarea>
+      <div class="actions inline-actions">
+        <button id="outlineGenerateBtn">Generate Draft</button>
+        <button id="outlineClearBtn" type="button">Clear</button>
+        <button id="outlineCopyBtn" type="button">Copy</button>
+        <button id="outlineDownloadWordBtn" type="button">Download Word</button>
+        <button id="outlineDownloadPdfBtn" type="button">Download PDF</button>
+      </div>
+      <p class="block-label">Output</p>
+      <textarea id="outlineOutput" placeholder="Draft from outline appears here..." readonly></textarea>
+      <div class="tool-stats"><p>Output words: <strong id="outlineWordCount">0</strong></p></div>
+      <div class="history-wrap"><h3>History</h3><div id="outlineHistory" class="history-list">No saved versions yet.</div></div>
+    </section>
+
+    <section class="tool-panel" id="tool-file">
+      <h2>PDF/Doc Analyzer</h2>
+      <div class="tool-intro">
+        <p>Upload PDF/DOCX/TXT files or paste text, then extract actionable insights with page-aware context.</p>
+        <div class="tool-steps"><span>1. Upload file</span><span>2. Index + analyze</span><span>3. Export report</span></div>
+      </div>
+      <div class="mini-grid">
+        <label>Upload document
+          <input id="fileUploadInput" type="file" accept=".pdf,.docx,.txt,.md" />
+        </label>
+        <div class="actions inline-actions">
+          <button id="fileUploadBtn" type="button">Upload &amp; Index</button>
+        </div>
+      </div>
+      <p id="fileUploadStatus" class="upload-status">No file uploaded yet.</p>
+      <p class="block-label">Input</p>
+      <textarea id="fileInput" placeholder="Paste extracted PDF/Doc content here..."></textarea>
+      <div class="actions inline-actions">
+        <button id="fileGenerateBtn">Analyze Document</button>
+        <button id="fileClearBtn" type="button">Clear</button>
+        <button id="fileCopyBtn" type="button">Copy</button>
+        <button id="fileDownloadWordBtn" type="button">Download Word</button>
+        <button id="fileDownloadPdfBtn" type="button">Download PDF</button>
+      </div>
+      <p class="block-label">Output</p>
+      <textarea id="fileOutput" placeholder="Document analysis appears here..." readonly></textarea>
+      <div class="tool-stats"><p>Output words: <strong id="fileWordCount">0</strong></p></div>
+      <div class="history-wrap"><h3>History</h3><div id="fileHistory" class="history-list">No saved versions yet.</div></div>
+    </section>
+
+    <section class="tool-panel" id="tool-heatmap">
+      <h2>Grammar &amp; Style Heatmap</h2>
+      <div class="tool-intro">
+        <p>Get a diagnostic map of grammar, clarity, and flow weaknesses.</p>
+        <div class="tool-steps"><span>1. Paste draft</span><span>2. Run heatmap</span><span>3. Fix priority issues</span></div>
+      </div>
+      <p class="block-label">Input</p>
+      <textarea id="heatmapInput" placeholder="Paste draft for style diagnostics..."></textarea>
+      <div class="actions inline-actions">
+        <button id="heatmapGenerateBtn">Run Heatmap</button>
+        <button id="heatmapClearBtn" type="button">Clear</button>
+        <button id="heatmapCopyBtn" type="button">Copy</button>
+        <button id="heatmapDownloadWordBtn" type="button">Download Word</button>
+        <button id="heatmapDownloadPdfBtn" type="button">Download PDF</button>
+      </div>
+      <p class="block-label">Output</p>
+      <textarea id="heatmapOutput" placeholder="Style diagnostics appear here..." readonly></textarea>
+      <div class="tool-stats"><p>Output words: <strong id="heatmapWordCount">0</strong></p></div>
+      <div class="history-wrap"><h3>History</h3><div id="heatmapHistory" class="history-list">No saved versions yet.</div></div>
+    </section>
+
+    <section class="tool-panel" id="tool-readiness">
+      <h2>Submission Readiness Score</h2>
+      <div class="tool-intro">
+        <p>Get final readiness scoring before submission with prioritized fixes.</p>
+        <div class="tool-steps"><span>1. Paste final draft</span><span>2. Score readiness</span><span>3. Apply fixes</span></div>
+      </div>
+      <p class="block-label">Input</p>
+      <textarea id="readinessInput" placeholder="Paste your near-final submission..."></textarea>
+      <div class="actions inline-actions">
+        <button id="readinessGenerateBtn">Score Readiness</button>
+        <button id="readinessClearBtn" type="button">Clear</button>
+        <button id="readinessCopyBtn" type="button">Copy</button>
+        <button id="readinessDownloadWordBtn" type="button">Download Word</button>
+        <button id="readinessDownloadPdfBtn" type="button">Download PDF</button>
+      </div>
+      <p class="block-label">Output</p>
+      <textarea id="readinessOutput" placeholder="Readiness report appears here..." readonly></textarea>
+      <div class="tool-stats"><p>Output words: <strong id="readinessWordCount">0</strong></p></div>
+      <div class="history-wrap"><h3>History</h3><div id="readinessHistory" class="history-list">No saved versions yet.</div></div>
+    </section>
+  </main>
+
+  <script src="core.js?v=20260218ux13"></script>
+  <script src="theme.js?v=20260218ux35"></script>
+  <script src="i18n.js?v=20260219src1"></script>
+  <script src="manychat.js?v=20260216mc7"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+  <script src="tools.js?v=20260219prod1"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

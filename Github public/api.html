@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>API | Best student humanizer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="legal.css?v=20260217ux15" />
+  <link rel="stylesheet" href="theme.css?v=20260217ux15" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("bsh_theme");
+        document.documentElement.setAttribute("data-theme", t === "light" ? "light" : "dark");
+      } catch (_) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    })();
+  </script>
+</head>
+<body>
+  <main class="legal-wrap">
+    <a class="back-link" href="index.html">&larr; Back to Home</a>
+    <article class="legal-card">
+      <p class="kicker">Developers</p>
+      <h1>API</h1>
+      <p class="updated">Last updated: February 17, 2026</p>
+
+      <section>
+        <h2>API Access</h2>
+        <p>API access is currently available to selected plans and approved integrations.</p>
+      </section>
+      <section>
+        <h2>Authentication</h2>
+        <p>All API requests require secure authentication credentials and must follow account-level permissions.</p>
+      </section>
+      <section>
+        <h2>Rate Limits</h2>
+        <p>Requests are limited per account to protect service quality and platform stability.</p>
+      </section>
+      <section>
+        <h2>Planned Endpoints</h2>
+        <p>Planned endpoints include text rewrite, academic drafting support, and usage analytics.</p>
+      </section>
+      <section>
+        <h2>Contact</h2>
+        <p>For API onboarding, email: api@beststudenthumanizer.ai</p>
+      </section>
+    </article>
+  </main>
+
+  <script src="theme.js?v=20260217ux15"></script>
+</body>
+</html>

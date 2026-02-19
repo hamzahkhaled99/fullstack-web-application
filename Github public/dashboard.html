@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Dashboard | Best student humanizer</title>
+  <link rel="icon" type="image/svg+xml" href="assets/site-logo.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="dashboard.css?v=20260218ux16" />
+  <link rel="stylesheet" href="theme.css?v=20260218ux13" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("bsh_theme");
+        document.documentElement.setAttribute("data-theme", t === "light" ? "light" : "dark");
+      } catch (_) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    })();
+  </script>
+</head>
+<body>
+  <main class="dashboard-page">
+    <header class="dash-header">
+      <a href="index.html" class="dash-link" data-i18n="back">Back</a>
+      <div class="dash-title-wrap">
+        <h1 data-i18n="welcome_dashboard">Your Student Workspace</h1>
+        <p data-i18n="dashboard_sub">Track usage, manage plan, and continue writing.</p>
+      </div>
+      <button id="dashLogoutBtn" class="dash-btn ghost" data-i18n="logout">Log out</button>
+    </header>
+
+    <section class="cards-grid">
+      <article class="dash-card">
+        <h3 data-i18n="current_plan">Current plan</h3>
+        <p id="dashPlan" class="value">-</p>
+      </article>
+      <article class="dash-card">
+        <h3 data-i18n="monthly_credits">Monthly credits</h3>
+        <p id="dashCredits" class="value">-</p>
+      </article>
+      <article class="dash-card">
+        <h3 data-i18n="used_words">Used words</h3>
+        <p id="dashUsed" class="value">-</p>
+      </article>
+      <article class="dash-card">
+        <h3 data-i18n="remaining_words">Remaining words</h3>
+        <p id="dashRemaining" class="value">-</p>
+      </article>
+    </section>
+
+    <section class="dash-panel">
+      <h2 data-i18n="usage_by_tool">Usage by tool</h2>
+      <div id="toolUsageList" class="usage-list"></div>
+    </section>
+
+    <section class="dash-panel">
+      <label class="consent-row">
+        <input id="historyConsent" type="checkbox" />
+        <span data-i18n="save_history_label">Save my generated outputs for history & restore</span>
+      </label>
+    </section>
+
+    <section class="dash-panel actions-row">
+      <a href="tools.html" class="dash-btn" data-i18n="open_tools">Open Tools</a>
+    </section>
+
+    <section class="dash-panel">
+      <h2 id="accountPanelTitle">Account &amp; Privacy</h2>
+      <p id="accountPanelHint">Export your data or permanently delete your account.</p>
+      <div class="actions-row">
+        <button id="exportDataBtn" class="dash-btn" type="button">Export My Data</button>
+        <button id="deleteAccountBtn" class="dash-btn dash-btn-danger" type="button">Delete Account</button>
+      </div>
+      <p id="accountActionStatus" class="account-status" aria-live="polite"></p>
+    </section>
+
+    <section id="onboardingPanel" class="dash-panel onboarding hidden">
+      <h2 data-i18n="onboarding_title">Quick Start</h2>
+      <p data-i18n="onboarding_body">Use Humanizer Pro for rewriting, Research Copilot for planning, and Essay Architect for structured drafts.</p>
+      <button id="onboardingClose" class="dash-btn" data-i18n="close">Close</button>
+    </section>
+  </main>
+
+  <script src="core.js?v=20260218ux13"></script>
+  <script src="theme.js?v=20260218ux35"></script>
+  <script src="i18n.js?v=20260219src1"></script>
+  <script src="manychat.js?v=20260216mc7"></script>
+  <script src="dashboard.js?v=20260218ux14"></script>
+</body>
+</html>
+
+
+
+
+
+

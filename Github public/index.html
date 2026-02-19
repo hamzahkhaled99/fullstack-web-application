@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Best student humanizer</title>
+  <link rel="icon" type="image/svg+xml" href="assets/site-logo.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css?v=20260216ux13" />
+  <link rel="stylesheet" href="theme.css?v=20260218ux13" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("bsh_theme");
+        document.documentElement.setAttribute("data-theme", t === "light" ? "light" : "dark");
+      } catch (_) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    })();
+  </script>
+</head>
+<body>
+  <div class="space-stars"></div>
+
+  <header class="top-nav-wrap">
+    <div class="top-nav">
+      <a href="#home" class="logo" aria-label="Best student humanizer">
+        <img src="assets/site-logo.svg" class="logo-image" alt="Best student humanizer logo" />
+        <span class="logo-text">Best student humanizer</span>
+      </a>
+
+      <nav class="desktop-nav">
+        <div class="dropdown tools-menu">
+          <button class="dropdown-btn" aria-expanded="false" type="button">Tools <i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+          <div class="dropdown-menu">
+            <a href="tools.html?tool=humanizer">Humanizer Pro</a>
+            <a href="tools.html?tool=chat">Research Copilot</a>
+            <a href="tools.html?tool=essay">Essay Architect</a>
+            <a href="tools.html?tool=note">Lecture Notes AI</a>
+          </div>
+        </div>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="#team">Team</a>
+        <a href="#about">About</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <a href="auth.html?mode=signup" class="get-started">Get started <span>-></span></a>
+
+      <button class="mobile-toggle" id="mobileToggle" aria-expanded="false" aria-controls="mobileNav" type="button">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <nav class="mobile-nav" id="mobileNav">
+      <a href="#tools">Tools</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="#team">Team</a>
+      <a href="#about">About</a>
+      <a href="#faq">FAQ</a>
+      <a href="auth.html?mode=signup" class="get-started">Get started <span>-></span></a>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero-shell">
+      <div class="hero-card">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="pill">* Academic AI Workspace</p>
+            <h1>
+              Best student <span class="hero-accent">humanizer</span><br />
+              <span class="hero-subline">Built for Results</span>
+            </h1>
+            <p class="hero-text">
+              Humanize drafts, build essays, and convert lectures into clean notes in one place.
+              Fast workflow, cleaner writing, better outcomes.
+            </p>
+            <div class="hero-actions">
+              <a href="#pricing" class="btn-light">Start Free <span>-></span></a>
+            </div>
+
+            <div class="stats-box">
+              <article>
+                <h3 class="stat-number" data-counter data-type="kplus" data-target="62" data-min="45" data-max="100">62K+</h3>
+                <p>Active Learners</p>
+              </article>
+              <article>
+                <h3 class="stat-number" data-counter data-type="percent" data-target="92.4" data-min="89.5" data-max="96.8">92.4%</h3>
+                <p>Natural Output Score</p>
+              </article>
+              <article>
+                <h3 class="stat-number" data-counter data-type="plus" data-target="9" data-min="6" data-max="14">9+</h3>
+                <p>Academic Tools</p>
+              </article>
+            </div>
+          </div>
+
+          <aside class="hero-showcase">
+            <a class="hero-orb-link" href="auth.html" aria-label="Open Sign In and Sign Up page">
+              <div class="hero-orb"></div>
+            </a>
+            <div class="showcase-card">
+              <h3>Live Workflow</h3>
+              <ul>
+                <li><span>Humanizer Pro</span><strong>High Demand</strong></li>
+                <li><span>Research Copilot</span><strong>High Demand</strong></li>
+                <li><span>Essay Architect</span><strong>High Demand</strong></li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="detector-demo">
+      <div class="container">
+        <div class="demo-headline">
+          <p class="section-kicker">Hands-On Preview</p>
+          <h2>Explore The Workspace</h2>
+        </div>
+        <div class="demo-card">
+          <div class="demo-tabs">
+            <button class="active" type="button" data-demo="humanizer">Humanizer Pro <small>Natural, undetectable style</small></button>
+            <button type="button" data-demo="chat">Research Copilot <small>Ask, analyze, write faster</small></button>
+            <button type="button" data-demo="essay">Essay Architect <small>Structured academic writing</small></button>
+            <button type="button" data-demo="note">Lecture Notes AI <small>Lecture to notes in seconds</small></button>
+          </div>
+
+          <div class="demo-panel" id="demoContentArea"></div>
+          <a href="tools.html?tool=humanizer" class="demo-btn" id="demoCta">Launch Humanizer Pro</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="tools">
+      <div class="container">
+        <p class="section-kicker">Student Toolset</p>
+        <h2>Everything You Need in One Suite</h2>
+        <div class="tool-groups">
+          <div class="tool-group">
+            <div class="tool-group-head">
+              <h3>Core Tools</h3>
+              <p>Daily academic workflow</p>
+            </div>
+            <div class="cards tools-grid">
+              <article class="info-card tool-card" id="tool-humanizer">
+                <div class="tool-head"><span class="tool-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></span><span class="tool-badge">AI Agent</span></div>
+                <h3><a href="tools.html?tool=humanizer">Humanizer Pro</a></h3>
+                <p>Rewrite AI-like text into natural, credible writing.</p>
+              </article>
+              <article class="info-card tool-card" id="tool-chat">
+                <div class="tool-head"><span class="tool-icon"><i class="fa-solid fa-microscope"></i></span><span class="tool-badge">AI Agent</span></div>
+                <h3><a href="tools.html?tool=chat">Research Copilot</a></h3>
+                <p>Plan research and solve tasks with guided responses.</p>
+              </article>
+              <article class="info-card tool-card" id="tool-essay">
+                <div class="tool-head"><span class="tool-icon"><i class="fa-solid fa-pen-nib"></i></span><span class="tool-badge">AI Agent</span></div>
+                <h3><a href="tools.html?tool=essay">Essay Architect</a></h3>
+                <p>Generate clear essay structures and complete drafts.</p>
+              </article>
+              <article class="info-card tool-card">
+                <div class="tool-head"><span class="tool-icon"><i class="fa-solid fa-note-sticky"></i></span><span class="tool-badge">AI Agent</span></div>
+                <h3><a href="tools.html?tool=note">Lecture Notes AI</a></h3>
+                <p>Convert lectures and long content into revision notes.</p>
+              </article>
+              <article class="info-card tool-card">
+                <div class="tool-head"><span class="tool-icon"><i class="fa-solid fa-shield-halved"></i></span><span class="tool-badge">AI Agent</span></div>
+                <h3><a href="tools.html?tool=report">Authenticity Report</a></h3>
+                <p>Check text signals before submission.</p>
+              </article>
+              <article class="info-card tool-card">
+                <div class="tool-head"><span class="tool-icon"><i class="fa-solid fa-sliders"></i></span><span class="tool-badge">AI Agent</span></div>
+                <h3><a href="tools.html?tool=editor">Smart Editor</a></h3>
+                <p>Fix grammar, flow, and clarity without changing meaning.</p>
+              </article>
+            </div>
+          </div>
+
+          <div class="tool-group">
+            <div class="tool-group-head">
+              <h3>Advanced Writing</h3>
+              <p>Build stronger drafts faster</p>
+            </div>
+            <div class="cards tools-grid">
+              <article class="info-card tool-card">
+                <div class="tool-head"><span class="tool-icon"><i class="fa-solid fa-quote-right"></i></span><span class="tool-badge">AI Agent</span></div>
+                <h3><a href="tools.html?tool=citation">Citation Agent</a></h3>
+                <p>Generate citation-ready references in common styles.</p>
+              </article>
+              <article class="info-card tool-card">
+                <div class="tool-head"><span class="tool-icon"><i class="fa-solid fa-triangle-exclamation"></i></span><span class="tool-badge">AI Agent</span></div>
+                <h3><a href="tools.html?tool=plagiarism">Plagiarism Checker</a></h3>
+                <p>Flag high-risk overlap patterns before submission.</p>
+              </article>
+              <article class="info-card tool-card">
+                <div class="tool-head"><span class="tool-icon"><i class="fa-solid fa-flask-vial"></i></span><span class="tool-badge">AI Agent</span></div>
+                <h3><a href="tools.html?tool=methodology">Methodology Builder</a></h3>
+                <p>Outline methods, variables, and structured approach.</p>
+              </article>
+              <article class="info-card tool-card">
+                <div class="tool-head"><span class="tool-icon"><i class="fa-solid fa-repeat"></i></span><span class="tool-badge">AI Agent</span></div>
+                <h3><a href="tools.html?tool=paraphrase">Paraphrase by Level</a></h3>
+                <p>Rephrase text by clarity, depth, and academic level.</p>
+              </article>
+              <article class="info-card tool-card">
+                <div class="tool-head"><span class="tool-icon"><i class="fa-solid fa-lightbulb"></i></span><span class="tool-badge">AI Agent</span></div>
+                <h3><a href="tools.html?tool=thesis">Thesis Generator</a></h3>
+                <p>Create focused thesis options from your topic scope.</p>
+              </article>
+              <article class="info-card tool-card">
+                <div class="tool-head"><span class="tool-icon"><i class="fa-solid fa-sitemap"></i></span><span class="tool-badge">AI Agent</span></div>
+                <h3><a href="tools.html?tool=outline">Outline to Draft</a></h3>
+                <p>Convert bullet outlines into coherent draft sections.</p>
+              </article>
+            </div>
+          </div>
+
+          <div class="tool-group">
+            <div class="tool-group-head">
+              <h3>Quality &amp; Review</h3>
+              <p>Final checks before hand-in</p>
+            </div>
+            <div class="cards tools-grid">
+              <article class="info-card tool-card">
+                <div class="tool-head"><span class="tool-icon"><i class="fa-solid fa-file-lines"></i></span><span class="tool-badge">AI Agent</span></div>
+                <h3><a href="tools.html?tool=file">PDF/Doc Analyzer</a></h3>
+                <p>Scan uploaded files and summarize actionable fixes.</p>
+              </article>
+              <article class="info-card tool-card">
+                <div class="tool-head"><span class="tool-icon"><i class="fa-solid fa-wave-square"></i></span><span class="tool-badge">AI Agent</span></div>
+                <h3><a href="tools.html?tool=heatmap">Style Heatmap</a></h3>
+                <p>Visualize weak spots in tone, flow, and readability.</p>
+              </article>
+              <article class="info-card tool-card">
+                <div class="tool-head"><span class="tool-icon"><i class="fa-solid fa-circle-check"></i></span><span class="tool-badge">AI Agent</span></div>
+                <h3><a href="tools.html?tool=readiness">Submission Readiness</a></h3>
+                <p>Score your draft readiness with a clear checklist.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container split">
+        <div class="about-intro">
+          <p class="section-kicker">Why It Works</p>
+          <h2>Built for Real Coursework</h2>
+          <p class="muted-copy">Built for real deadlines, cleaner submissions, and consistent academic quality from first draft to final version.</p>
+          <ul class="about-intro-list">
+            <li>Structured outputs for assignments and reports</li>
+            <li>Cleaner language with your writing voice preserved</li>
+            <li>Faster workflow from idea to final submission</li>
+          </ul>
+        </div>
+        <div class="cards feature-grid">
+          <article class="info-card feature-card">
+            <span class="feature-tag">01</span>
+            <h3>Voice Preservation</h3>
+            <p>Your writing style stays natural and believable.</p>
+          </article>
+          <article class="info-card feature-card">
+            <span class="feature-tag">02</span>
+            <h3>Task-Based Workflow</h3>
+            <p>Pick the right tool for each academic task.</p>
+          </article>
+          <article class="info-card feature-card">
+            <span class="feature-tag">03</span>
+            <h3>Academic Clarity</h3>
+            <p>Get clearer structure, cleaner wording, and stronger flow.</p>
+          </article>
+          <article class="info-card feature-card">
+            <span class="feature-tag">04</span>
+            <h3>Fast Turnaround</h3>
+            <p>Move from rough notes to polished output quickly.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section testimonials-section" id="testimonials">
+      <div class="container">
+        <p class="section-kicker">Student Voices</p>
+        <h2>What Students Say</h2>
+        <div class="testimonials-strip" aria-label="Client testimonials">
+          <div class="testimonials-track">
+            <article class="testimonial-card">
+              <p>"The humanizer made my draft sound natural in minutes. ??"</p>
+              <h4>Emma Collins</h4>
+            </article>
+            <article class="testimonial-card">
+              <p>"Research Copilot saved me hours on literature review. ??"</p>
+              <h4>Liam Parker</h4>
+            </article>
+            <article class="testimonial-card">
+              <p>"Essay Architect gave me a clean structure from the start. ??"</p>
+              <h4>Noah Bennett</h4>
+            </article>
+            <article class="testimonial-card">
+              <p>"I finally write faster without losing my own style. ?"</p>
+              <h4>Sophia Reed</h4>
+            </article>
+            <article class="testimonial-card">
+              <p>"The output feels clearer and more academic every time. ?"</p>
+              <h4>Olivia Turner</h4>
+            </article>
+            <article class="testimonial-card">
+              <p>"Lecture Notes AI helped me catch key points in class. ??"</p>
+              <h4>Ethan Brooks</h4>
+            </article>
+            <article class="testimonial-card">
+              <p>"Smart Editor fixed my flow without changing my meaning. ??"</p>
+              <h4>Mia Carter</h4>
+            </article>
+            <article class="testimonial-card">
+              <p>"I submitted my assignment with way more confidence. ??"</p>
+              <h4>Lucas Hayes</h4>
+            </article>
+
+            <article class="testimonial-card" aria-hidden="true">
+              <p>"The humanizer made my draft sound natural in minutes. ??"</p>
+              <h4>Emma Collins</h4>
+            </article>
+            <article class="testimonial-card" aria-hidden="true">
+              <p>"Research Copilot saved me hours on literature review. ??"</p>
+              <h4>Liam Parker</h4>
+            </article>
+            <article class="testimonial-card" aria-hidden="true">
+              <p>"Essay Architect gave me a clean structure from the start. ??"</p>
+              <h4>Noah Bennett</h4>
+            </article>
+            <article class="testimonial-card" aria-hidden="true">
+              <p>"I finally write faster without losing my own style. ?"</p>
+              <h4>Sophia Reed</h4>
+            </article>
+            <article class="testimonial-card" aria-hidden="true">
+              <p>"The output feels clearer and more academic every time. ?"</p>
+              <h4>Olivia Turner</h4>
+            </article>
+            <article class="testimonial-card" aria-hidden="true">
+              <p>"Lecture Notes AI helped me catch key points in class. ??"</p>
+              <h4>Ethan Brooks</h4>
+            </article>
+            <article class="testimonial-card" aria-hidden="true">
+              <p>"Smart Editor fixed my flow without changing my meaning. ??"</p>
+              <h4>Mia Carter</h4>
+            </article>
+            <article class="testimonial-card" aria-hidden="true">
+              <p>"I submitted my assignment with way more confidence. ??"</p>
+              <h4>Lucas Hayes</h4>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section pricing-showcase" id="pricing">
+      <div class="container">
+        <div class="pricing-free-banner" role="status" aria-live="polite">
+          <strong>Limited-Time FREE Access:</strong> All premium tools are unlocked right now. Join today and secure your free early access before this offer ends.
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container narrow">
+        <p class="section-kicker">FAQ</p>
+        <div class="faq-title-row">
+          <h2>Before You Start</h2>
+          <button type="button" class="faq-master-toggle" id="faqMasterToggle" aria-expanded="false" aria-controls="faqList">
+            <span class="sr-only">Toggle FAQ list</span>
+            <span class="faq-master-arrow">?</span>
+          </button>
+        </div>
+        <div class="faq-list" id="faqList" hidden>
+          <article class="faq-item">
+            <button type="button" class="faq-toggle" aria-expanded="false">
+              <span>What is Research Copilot?</span>
+              <span class="faq-arrow">?</span>
+            </button>
+            <p>An AI assistant for research planning, homework support, and writing tasks.</p>
+          </article>
+          <article class="faq-item">
+            <button type="button" class="faq-toggle" aria-expanded="false">
+              <span>Can I use this for assignments and essays?</span>
+              <span class="faq-arrow">?</span>
+            </button>
+            <p>Yes. You can plan, draft, humanize, and polish your work inside one workspace.</p>
+          </article>
+          <article class="faq-item">
+            <button type="button" class="faq-toggle" aria-expanded="false">
+              <span>Does Humanizer Pro reduce AI-pattern signals?</span>
+              <span class="faq-arrow">?</span>
+            </button>
+            <p>It rewrites phrasing and rhythm for more natural academic output.</p>
+          </article>
+          <article class="faq-item">
+            <button type="button" class="faq-toggle" aria-expanded="false">
+              <span>Which tools are included in one account?</span>
+              <span class="faq-arrow">?</span>
+            </button>
+            <p>You get Humanizer Pro, Research Copilot, Essay Architect, Lecture Notes AI, Authenticity Report, and Smart Editor.</p>
+          </article>
+          <article class="faq-item">
+            <button type="button" class="faq-toggle" aria-expanded="false">
+              <span>How do monthly credits work?</span>
+              <span class="faq-arrow">?</span>
+            </button>
+            <p>Each request consumes credits based on output size. Your plan defines your monthly credit ceiling.</p>
+          </article>
+          <article class="faq-item">
+            <button type="button" class="faq-toggle" aria-expanded="false">
+              <span>Can I upgrade or downgrade my plan anytime?</span>
+              <span class="faq-arrow">?</span>
+            </button>
+            <p>Yes. You can change plans from the dashboard, and the system updates your limits based on the new plan.</p>
+          </article>
+          <article class="faq-item">
+            <button type="button" class="faq-toggle" aria-expanded="false">
+              <span>Do you store my text or research files?</span>
+              <span class="faq-arrow">?</span>
+            </button>
+            <p>We only store required account and usage data for service operation. Review details in Privacy Policy.</p>
+          </article>
+          <article class="faq-item">
+            <button type="button" class="faq-toggle" aria-expanded="false">
+              <span>Can I export my outputs?</span>
+              <span class="faq-arrow">?</span>
+            </button>
+            <p>Yes. You can copy results directly and use built-in export options where available by tool.</p>
+          </article>
+          <article class="faq-item">
+            <button type="button" class="faq-toggle" aria-expanded="false">
+              <span>Is there a free plan for testing?</span>
+              <span class="faq-arrow">?</span>
+            </button>
+            <p>Yes. The free plan lets you test core features before moving to higher tiers.</p>
+          </article>
+          <article class="faq-item">
+            <button type="button" class="faq-toggle" aria-expanded="false">
+              <span>How can I contact support quickly?</span>
+              <span class="faq-arrow">?</span>
+            </button>
+            <p>Use Live Chat from the footer, or email support@beststudenthumanizer.ai for account and billing help.</p>
+          </article>
+          <article class="faq-item">
+            <button type="button" class="faq-toggle" aria-expanded="false">
+              <span>Can institutions request team access?</span>
+              <span class="faq-arrow">?</span>
+            </button>
+            <p>Yes. Contact us to discuss group onboarding, usage controls, and custom support for departments.</p>
+          </article>
+          <article class="faq-item">
+            <button type="button" class="faq-toggle" aria-expanded="false">
+              <span>What happens if I hit my credit limit?</span>
+              <span class="faq-arrow">?</span>
+            </button>
+            <p>You will see a clear notice and can continue by waiting for renewal or upgrading your plan.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section team-section" id="team">
+      <div class="container">
+        <p class="section-kicker">Who Built This</p>
+        <h2>Meet The Founding Team</h2>
+        <p class="team-sub">Built by experts focused on student outcomes, practical AI workflows, and trusted academic quality.</p>
+
+        <div class="cards team-grid">
+          <article class="info-card team-card">
+            <div class="team-photo fallback">
+              <img src="assets/team-hamzah.jpg" alt="Eng. Hamzah Rahahleh" onload="this.parentElement.classList.remove('fallback')" onerror="this.style.display='none';this.parentElement.classList.add('fallback')" />
+              <span aria-hidden="true">HR</span>
+            </div>
+            <h3>Eng. Hamzah Rahahleh</h3>
+            <p class="team-role">Lead Programmer</p>
+            <p>Designed and developed the platform architecture, product experience, and tool integrations.</p>
+          </article>
+
+          <article class="info-card team-card">
+            <div class="team-photo fallback">
+              <img src="assets/team-raed.webp" alt="Dr. Raed Wishah" onload="this.parentElement.classList.remove('fallback')" onerror="this.style.display='none';this.parentElement.classList.add('fallback')" />
+              <span aria-hidden="true">RW</span>
+            </div>
+            <h3>Dr. Raed Wishah</h3>
+            <p class="team-role">Product Vision & Idea Owner</p>
+            <p>Defined the core concept, academic direction, and strategic vision behind the platform.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-extended">
+      <div class="footer-brand">
+        <img src="assets/site-logo.svg" class="logo-image footer-logo-image" alt="Best student humanizer logo" />
+        <p class="copyright">&copy; Best student humanizer - All rights reserved.</p>
+        <div class="socials">
+          <a href="https://www.instagram.com/hamzahalkhaled" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://x.com/7amza260784" target="_blank" rel="noopener noreferrer" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-columns">
+        <div>
+          <h4>Products</h4>
+          <a href="index.html#pricing">Pricing &amp; Plans</a>
+          <a href="affiliate-program.html">Affiliate program</a>
+          <a href="api.html">API</a>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <a href="index.html#about">About us</a>
+          <a href="blog.html">Blog</a>
+          <a href="careers.html">Careers</a>
+        </div>
+        <div>
+          <h4>Resources</h4>
+          <a href="changelog.html">Changelog</a>
+          <a href="mailto:support@beststudenthumanizer.ai">Email us</a>
+          <a href="tools.html?tool=chat">Live Chat</a>
+        </div>
+        <div>
+          <h4>Legals</h4>
+          <a href="terms.html">Terms &amp; Conditions</a>
+          <a href="privacy.html">Privacy policy</a>
+          <a href="cookies.html">Cookie policy</a>
+          <a href="affiliate-policy.html">Affiliate policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="core.js?v=20260218ux13"></script>
+  <script src="theme.js?v=20260218ux35"></script>
+  <script src="i18n.js?v=20260219src1"></script>
+  <script src="manychat.js?v=20260216mc7"></script>
+  <script src="app.js?v=20260218ux16"></script>
+</body>
+</html>
+
+

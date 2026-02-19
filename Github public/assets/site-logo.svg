@@ -1,0 +1,34 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(64 64) rotate(90) scale(64)">
+      <stop offset="0" stop-color="#111A3C"/>
+      <stop offset="1" stop-color="#080E24"/>
+    </radialGradient>
+    <linearGradient id="ring" x1="12" y1="12" x2="116" y2="116" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4F7CFF"/>
+      <stop offset="0.55" stop-color="#2BC8FF"/>
+      <stop offset="1" stop-color="#4F7CFF"/>
+    </linearGradient>
+    <linearGradient id="orb" x1="32" y1="30" x2="97" y2="99" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D9E8FF"/>
+      <stop offset="0.5" stop-color="#8CB6FF"/>
+      <stop offset="1" stop-color="#8DEBFF"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(64 64) rotate(90) scale(58)">
+      <stop stop-color="#7BF5FF" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="#7BF5FF" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="0" y="0" width="128" height="128" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#6FB8FF" flood-opacity="0.55"/>
+    </filter>
+  </defs>
+  <circle cx="64" cy="64" r="64" fill="url(#bg)"/>
+  <circle cx="64" cy="64" r="56" fill="url(#glow)"/>
+  <g filter="url(#shadow)">
+    <circle cx="64" cy="64" r="44" stroke="url(#ring)" stroke-width="6"/>
+  </g>
+  <circle cx="64" cy="64" r="30" fill="url(#orb)"/>
+  <circle cx="49" cy="50" r="8.8" fill="white" fill-opacity="0.9"/>
+  <circle cx="75.5" cy="57" r="6.4" fill="white" fill-opacity="0.72"/>
+  <circle cx="64" cy="64" r="29.5" stroke="white" stroke-opacity="0.22"/>
+</svg>
